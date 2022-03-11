@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -10,7 +12,7 @@ RSpec.describe User, type: :model do
     it 'should not create a user without username' do
       user = build :user, username: nil
       expect(user).to be_invalid
-      expect(user.errors.messages).to include{"username can't be blank"}
+      expect(user.errors.messages).to include { "username can't be blank" }
     end
   end
 end

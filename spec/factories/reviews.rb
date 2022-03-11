@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :review do
     rating { 1 }
-    comment { "MyText" }
+    comment { 'MyText' }
     post { nil }
     user { nil }
   end

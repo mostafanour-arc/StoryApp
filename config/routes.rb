@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  get '/trending', to:'stories#top_stories'
+  get '/trending', to: 'stories#top_stories'
   resources :users do
     resources :stories do
       resources :reviews
