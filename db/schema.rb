@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_11_064940) do
+ActiveRecord::Schema.define(version: 2022_03_11_081033) do
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating", default: 0, null: false
+    t.text "comment", null: false
+    t.integer "story_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["story_id"], name: "index_reviews_on_story_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "stories", force: :cascade do |t|
     t.string "title", null: false
@@ -27,5 +38,7 @@ ActiveRecord::Schema.define(version: 2022_03_11_064940) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "reviews", "stories"
+  add_foreign_key "reviews", "users"
   add_foreign_key "stories", "users"
 end

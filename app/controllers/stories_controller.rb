@@ -16,8 +16,13 @@ class StoriesController < ApplicationController
   end
 
   def top_stories
-    @stories = Story.all.page(params[:page])
-    render json: @stories
+     @avg = Review.group(:story_id).average("rating")
+     total_rating = 0
+     @avg.each do |average|
+       total_rating += average[1]
+     end
+     @stories = Story.joins(:reviews).where('rating >= ?', total_rating/@avg.size).order('rating desc').page(params[:page]).distinct
+    render json: @stories 
   end
 
   private
