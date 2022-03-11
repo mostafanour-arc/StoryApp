@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
+  get '/trending', to:'stories#top_stories'
+  resources :users do
+    resources :stories
+  end
 end
