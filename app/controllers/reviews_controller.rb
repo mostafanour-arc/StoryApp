@@ -3,8 +3,7 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
-    if @review.rating >= 0 && @review.rating <= 5
-      @review.save
+    if @review.save
       render json: @review, status: :created
     else
       render json: { erros: @review.errors.full_messages }, status: 422
@@ -12,7 +11,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
-    @story = Story.find_by(id: params[:story_id])
+    @story = Story.find(params[:story_id])
     @reviews = @story.reviews.page(params[:page])
     render json: @reviews
   end

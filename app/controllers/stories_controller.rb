@@ -11,7 +11,7 @@ class StoriesController < ApplicationController
   end
 
   def index
-    @user = User.find_by(id: params[:user_id])
+    @user = User.find(params[:user_id])
     @stories = @user.stories.page(params[:page])
     render json: @stories
   end

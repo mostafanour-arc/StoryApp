@@ -2,13 +2,15 @@
 
 Rails.application.routes.draw do
 
-  resources :stories do
+  
+  resources :stories, :only => [] do
     collection do
       get :top
     end
   end
-  resources :users do
-    resources :stories 
-      resources :reviews
+  resources :users, :only => [:index, :create, :show] do
+    resources :stories, :only => [:index, :create] do
+      resources :reviews, :only => [:index, :create]
+    end
   end
 end
