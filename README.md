@@ -27,4 +27,5 @@ Things you may want to cover:
 * 4- API to List User Posts with pagination :         get  "/stories?user_id=id&page=?"
 * 5- API to List Top Posts:                           get  '/stories/top'
 * 6- API to add a review to Post:                     post  '/stories/story_id/reviews'
+* 7- API to list post reviews with pagination:        get  '/stories/story_id/reviews?page=?'
 
