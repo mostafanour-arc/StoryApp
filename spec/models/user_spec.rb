@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
     it 'should create a user' do
       user = build :user
       expect(user).to be_valid
-      expect(user.username).to eq('Ahmed')
+      expect(user.username).to eq('mostafa')
     end
     it 'should not create a user without username' do
       user = build :user, username: nil

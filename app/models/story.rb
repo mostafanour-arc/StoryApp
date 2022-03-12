@@ -5,5 +5,5 @@ class Story < ApplicationRecord
   has_many :reviews
   validates :title, presence: true
   validates :body, presence: true
-  paginates_per(50)
+  paginates_per(10)
 end

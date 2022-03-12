@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Story, type: :model do
   describe '#validations' do
-    before do 
+    before do
       @story = build :story
     end
     it 'should create a story with user' do
@@ -14,7 +14,7 @@ RSpec.describe Story, type: :model do
     it 'should not create a story without user' do
       @story.user_id = nil
       expect(@story).to be_invalid
-      expect(@story.errors.messages[:user]).to include("must exist")
+      expect(@story.errors.messages[:user]).to include('must exist')
     end
-end
+  end
 end

@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :user do
     id { 1 }
-    username { 'Ahmed' }
+    username { 'mostafa' }
   end
 end

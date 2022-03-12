@@ -25,6 +25,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :body).merge(user_id: params[:user_id])
+    params.require(:story).permit(:title, :body, :user_id)
   end
 end
