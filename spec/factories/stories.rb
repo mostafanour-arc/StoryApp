@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :story do
     title { 'MyString' }
     body { 'MyText' }
-    user { nil }
+    user { build :user }
   end
 end
