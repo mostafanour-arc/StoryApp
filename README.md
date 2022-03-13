@@ -1,9 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+
 *** Notice: SQlite here can handle multiple requests, but it uses a single write concurrency
             While, Mysql support multiple transactions at the same time, So DBMS here should be MySQL instead of sqlite3 
 * Ruby version: 3.0.2
