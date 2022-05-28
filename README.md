@@ -1,9 +1,17 @@
 # README
 
 
+** About APP:
+an application, where a user can Post a story to his timeline. Story has a title and body.
+Each user can see other users’ timeline where they can find their stories' history. Another
+feature is to allow users to review a post, giving it a rate out of 5 and a comment (mandatory).
+Additionally users can see top posts, rated by average rate.
+
 
 *** Notice: SQlite here can handle multiple requests, but it uses a single write concurrency
-            While, Mysql support multiple transactions at the same time, So DBMS here should be MySQL instead of sqlite3 
+            While, Mysql support multiple transactions at the same time, So DBMS here should be MySQL instead of sqlite3 in case of multiple transactions             support in needed.
+            All requests below 100ms on an average machine With +50K Records.
+            
 * Ruby version: 3.0.2
 * Rails version: 6.1.5
 
